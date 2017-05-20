@@ -23,7 +23,7 @@ class Order (models.Model):
     BatchId = models.ForeignKey(Batches, blank=True)
     ShopperId = models.ForeignKey(Shopper, null=True, blank=True)
 
-    Total = models.FloatField(null=True)
+    Total = models.FloatField(blank=True, null=True)
     DeliveryCharge = models.FloatField(null=True, blank=True, default=0.0)
 
     PlacingTime = models.DateTimeField(auto_now_add=True)
@@ -43,7 +43,7 @@ class Order (models.Model):
     PriorityScore = models.IntegerField(blank=True, null=True)
 
     def __str__(self):
-        return self.OrderId
+        return str(self.OrderId)
 
     def save(self, *args, **kwargs):  # override save function of model class
         self.Total = self.Items.Total

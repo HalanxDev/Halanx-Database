@@ -87,8 +87,8 @@ WSGI_APPLICATION = 'Halanx.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Halanx',
-        'USER': 'admin',
+        'NAME': 'halan',
+        'USER': 'halan',
         'PASSWORD': 'Pass-1234',
         'HOST': 'localhost',
         'PORT': '',

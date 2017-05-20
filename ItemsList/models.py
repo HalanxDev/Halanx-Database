@@ -17,7 +17,7 @@ class Item(models.Model):
         super(Item, self).save(*args, **kwargs)
 
     def __str__(self):
-        return self.Item
+        return self.Item.ProductName
 
 
 class ItemList(models.Model):             #object of this class shall be made as soon as the order is placed
@@ -28,7 +28,7 @@ class ItemList(models.Model):             #object of this class shall be made as
     Active = models.BooleanField(blank=True, default=True)
 
     def __str__(self):
-        return self.Total
+        return self.Customer.PhoneNo
 
 
 

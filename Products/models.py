@@ -25,7 +25,7 @@ class Product(models.Model):
                                 blank=True, null=True,
                                 default='No Specific Category')
 
-    ProductImage = models.ImageField(upload_to="productimg/", null=True, blank=True)
+    ProductImage = models.CharField(max_length = 400, null=True, blank=True)
     Features = models.TextField(blank=True, null=True)
     Active = models.BooleanField(blank=True, default=True)    # no need of this as only active products will be stred in DB
 

@@ -17,7 +17,7 @@ class CartItem(models.Model):
         super(CartItem, self).save(*args, **kwargs)
 
     def __str__(self):
-        return self.Item
+        return self.Item.ProductName
 
 
 class Cart(models.Model):             #object of this class shall be updated as soon as user changes his cart
@@ -29,7 +29,7 @@ class Cart(models.Model):             #object of this class shall be updated as 
     Active = models.BooleanField(blank=True, default=True)
 
     def __str__(self):
-        return self.Total
+        return self.Username.PhoneNo
 
     def save(self, *args, **kwargs):
 

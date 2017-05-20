@@ -9,7 +9,7 @@ class Batches(models.Model):
     Earning = models.FloatField(blank=True, default=0.0)
 
     def __str__(self):
-        return self.pk
+        return str(self.pk)
 
 
 
