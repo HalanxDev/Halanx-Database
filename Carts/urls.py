@@ -5,4 +5,5 @@ from . import views
 urlpatterns = [
     url(r'^$',views.cart_list),
     url(r'^(?P<pk>[0-9]+)', views.cart_id),
+    # url(r'^items/(?P<pk>[0-9]+)', views.cart_items),
 ]

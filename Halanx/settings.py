@@ -25,7 +25,8 @@ SECRET_KEY = '8@%*i+3ckqe4%al^pm!_56s&e&k%eym&tx3p0)r#b+39ww6zv!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1','52.38.36.228','ec2-52-38-36-228.us-west-2.compute.amazonaws.com']
+# ALLOWED_HOSTS = ['localhost', '127.0.0.1','52.38.36.228','ec2-52-38-36-228.us-west-2.compute.amazonaws.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1','34.208.181.152','ec2-34-208-181-152.us-west-2.compute.amazonaws.com']
 
 
 # Application definition
@@ -89,26 +90,44 @@ TEMPLATES = [
 WSGI_APPLICATION = 'Halanx.wsgi.application'
 
 
-# Database
+# Databases
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
+#Mysql databse in my pc
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'halan',
+        'USER': 'halan',
+        'PASSWORD': 'Pass-1234',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
+
+# RDS Database
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'halan',
-#         'USER': 'halan',
+#         'NAME': 'Halanx',
+#         'USER': 'Halanx',
 #         'PASSWORD': 'Pass-1234',
-#         'HOST': 'localhost',
-#         'PORT': '',
+#         'HOST': 'halanx.c0vvfkdln5ew.us-west-2.rds.amazonaws.com',
+#         'PORT': '3306',
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+
+
+# sqlite database
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#    }
+#}
+
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
@@ -123,6 +142,8 @@ USE_L10N = True
 
 USE_TZ = True
 
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
