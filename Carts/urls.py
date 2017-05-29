@@ -3,7 +3,10 @@ from . import views
 
 
 urlpatterns = [
-    url(r'^$',views.cart_list),
-    url(r'^(?P<pk>[0-9]+)', views.cart_id),
-    # url(r'^items/(?P<pk>[0-9]+)', views.cart_items),
+    url(r'^$', views.cart_list),
+    url(r'^(?P<pk>[0-9]+)/', views.cart_id),
+    url(r'^items/$', views.item_list),
+    url(r'^items/(?P<pk>[0-9]+)/', views.item_id),
+    url(r'^itemlist/(?P<pk>[0-9]+)/', views.cart_itemlist),
 ]
+

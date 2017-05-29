@@ -33,12 +33,14 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1','34.208.181.152','ec2-34-208-181-152.u
 
 INSTALLED_APPS = (
     'django.contrib.admin',
+    'registration',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework.authtoken',
     'BatchBase',
     'Carts',
     'ItemsList',
@@ -51,7 +53,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'allauth',
     'allauth.account',
-    'rest_auth.registration',
+    #  'rest_auth.registration',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.facebook'
 )
@@ -93,7 +95,7 @@ WSGI_APPLICATION = 'Halanx.wsgi.application'
 # Databases
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
-#Mysql databse in my pc
+# Mysql database in my pc
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -105,18 +107,19 @@ DATABASES = {
     }
 }
 
-# RDS Database
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'Halanx',
-#         'USER': 'Halanx',
-#         'PASSWORD': 'Pass-1234',
-#         'HOST': 'halanx.c0vvfkdln5ew.us-west-2.rds.amazonaws.com',
-#         'PORT': '3306',
-#     }
-# }
-
+# RDS Database - enable on AWS
+"""
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'Halanx',
+        'USER': 'Halanx',
+        'PASSWORD': 'Pass-1234',
+        'HOST': 'halanx.c0vvfkdln5ew.us-west-2.rds.amazonaws.com',
+        'PORT': '3306',
+    }
+}
+"""
 
 
 # sqlite database
@@ -145,7 +148,15 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.8/howto/static-files/
-
+# enable on aws
+"""
 STATIC_URL = '/static/'
+STATIC_ROOT = '/home/ubuntu/h/p/static'
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.8/howto/static-files
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = '/home/ubuntu/h/p/media'
+
+"""

@@ -4,12 +4,16 @@ from StoreBase.models import Store
 
 SHOE = 'Footwear'
 DRY = 'Dairy Products'
+FUR = 'Furniture'
+FOOD = 'Food'
 NONE = 'No specific category'
 
 
 ProductCategories = (            # Add categories here
 (SHOE, 'Footwear'),
 (DRY, 'Dairy Products'),
+(FUR, 'Furniture'),
+(FOOD, 'Food'),
 (NONE, 'No Specific Category'),
 )
 
