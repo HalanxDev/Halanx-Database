@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa0caf13-826b-464e-9a7e-da8cd7f6b95d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Carts/models.py" afterPath="$PROJECT_DIR$/Carts/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Carts/urls.py" afterPath="$PROJECT_DIR$/Carts/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Carts/views.py" afterPath="$PROJECT_DIR$/Carts/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Halanx/settings.py" afterPath="$PROJECT_DIR$/Halanx/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Halanx/urls.py" afterPath="$PROJECT_DIR$/Halanx/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Products/models.py" afterPath="$PROJECT_DIR$/Products/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UserBase/models.py" afterPath="$PROJECT_DIR$/UserBase/models.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -62,7 +55,7 @@
         <entry file="file://$PROJECT_DIR$/Halanx/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="353">
-              <caret line="106" column="5" lean-forward="true" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
+              <caret line="106" column="5" lean-forward="false" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -83,8 +76,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Products/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-133">
-              <caret line="15" column="15" lean-forward="false" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
+            <state relative-caret-position="18">
+              <caret line="15" column="16" lean-forward="false" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -138,8 +131,8 @@
         <option value="$PROJECT_DIR$/Carts/urls.py" />
         <option value="$PROJECT_DIR$/Halanx/settings.py" />
         <option value="$PROJECT_DIR$/Carts/models.py" />
-        <option value="$PROJECT_DIR$/Products/models.py" />
         <option value="$PROJECT_DIR$/Carts/views.py" />
+        <option value="$PROJECT_DIR$/Products/models.py" />
       </list>
     </option>
   </component>
@@ -795,7 +788,7 @@
     <entry file="file://$PROJECT_DIR$/Halanx/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="353">
-          <caret line="106" column="5" lean-forward="true" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
+          <caret line="106" column="5" lean-forward="false" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -840,8 +833,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Products/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-133">
-          <caret line="15" column="15" lean-forward="false" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
+        <state relative-caret-position="18">
+          <caret line="15" column="16" lean-forward="false" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
           <folding />
         </state>
       </provider>
