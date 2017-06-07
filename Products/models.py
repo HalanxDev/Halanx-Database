@@ -10,11 +10,11 @@ NONE = 'No specific category'
 
 
 ProductCategories = (            # Add categories here
-(SHOE, 'Footwear'),
-(DRY, 'Dairy Products'),
-(FUR, 'Furniture'),
-(FOOD, 'Food'),
-(NONE, 'No Specific Category'),
+ (SHOE, 'Footwear'),
+ (DRY, 'Dairy Products'),
+ (FUR, 'Furniture'),
+ (FOOD, 'Food'),
+ (NONE, 'No Specific Category'),
 )
 
 
@@ -29,7 +29,7 @@ class Product(models.Model):
                                 blank=True, null=True,
                                 default='No Specific Category')
 
-    ProductImage = models.CharField(max_length = 400, null=True, blank=True)
+    ProductImage = models.CharField(max_length=400, null=True, blank=True)
     Features = models.TextField(blank=True, null=True)
     Active = models.BooleanField(blank=True, default=True)    # no need of this as only active products will be stred in DB
 

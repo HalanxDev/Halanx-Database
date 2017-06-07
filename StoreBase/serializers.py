@@ -6,7 +6,7 @@ class StoreSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Store
-        field = '__all__'
+        fields = '__all__'
 
 
 

@@ -28,6 +28,7 @@ class Cart(models.Model):             # object of this class shall be updated as
 
     Username = models.OneToOneField(User, blank=True, null=True)
     Total = models.FloatField(blank=True, default=0.0)
+    UserPhone = models.BigIntegerField(unique=True, null=True)
     # AllItems = models.ManyToManyField(CartItem, blank=True)
     # not req. but nothing else working
 
@@ -40,7 +41,9 @@ class Cart(models.Model):             # object of this class shall be updated as
 
     def save(self, *args, **kwargs):
 
-        #attach algo for delivery charges
+        self.UserPhone = self.Username.PhoneNo
+
+        # attach algo for delivery charges
         super(Cart, self).save(*args, **kwargs)
 
 

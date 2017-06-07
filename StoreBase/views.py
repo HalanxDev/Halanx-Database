@@ -55,7 +55,7 @@ def store_id(request, pk):
 def store_products(request, pk):
 
     try:
-        part = Product.objects.get(Store=pk)
+        part = Product.objects.get(Store=pk)   # error
     except Product.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
