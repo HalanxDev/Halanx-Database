@@ -16,18 +16,19 @@ class CartItem(models.Model):
 
     def save(self, *args, **kwargs):
         self.SubTotal = self.Item.Price * self.Quantity
-        self.Cart.Total = self.Cart.Total + self.Item.Price * self.Quantity
+        self.Cart.Total = self.Cart.Total + (self.Item.Price*self.Quantity)
         # self.CartNo = self.Cart.pk
         super(CartItem, self).save(*args, **kwargs)
 
     def __str__(self):
-        return str(self.Cart.pk) + " : " + str(self.Item.pk)
+        return str(self.Cart.UserPhone) + " : " + str(self.Item.pk)
 
 
 class Cart(models.Model):             # object of this class shall be updated as soon as user changes his cart
 
     Username = models.OneToOneField(User, blank=True, null=True)
     Total = models.FloatField(blank=True, default=0.0)
+    UserPhone = models.BigIntegerField(unique=True, null=True, blank=True)
     # AllItems = models.ManyToManyField(CartItem, blank=True)
     # not req. but nothing else working
 
@@ -36,11 +37,13 @@ class Cart(models.Model):             # object of this class shall be updated as
     Active = models.BooleanField(blank=True, default=True)
 
     def __str__(self):
-        return self.Username.PhoneNo
+        return str(self.Username.PhoneNo)
 
     def save(self, *args, **kwargs):
 
-        #attach algo for delivery charges
+        self.UserPhone = self.Username.PhoneNo
+
+        # attach algo for delivery charges
         super(Cart, self).save(*args, **kwargs)
 
 

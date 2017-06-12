@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Shopper, Slot
+from .models import Shopper
 
 
 class ShopperSerializer(serializers.ModelSerializer):
@@ -8,11 +8,5 @@ class ShopperSerializer(serializers.ModelSerializer):
         model = Shopper
         fields = '__all__'
 
-
-class SlotSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = Slot
-        fields = '__all__'
 
 

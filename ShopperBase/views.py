@@ -1,9 +1,9 @@
 
 
-from .models import Shopper, Slot
+from .models import Shopper
 from rest_framework.decorators import api_view
 from rest_framework import status
-from .serializers import ShopperSerializer, SlotSerializer
+from .serializers import ShopperSerializer
 from rest_framework.response import Response
 
 # create method for displaying all timeslots of a particular date
@@ -28,10 +28,10 @@ def shopper_list(request):
 
 # To get product according to its pk
 @api_view(['GET', 'PUT', 'DELETE'])
-def shopper_id(request, pk):
+def shopper_id(request, no):
 
     try:
-        part = Shopper.objects.get(pk=pk)
+        part = Shopper.objects.get(PhoneNo=no)
     except Shopper.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
@@ -50,21 +50,6 @@ def shopper_id(request, pk):
         part.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
-
-@api_view(['GET', 'POST'])
-def slot_list(request):
-
-    if request.method == 'GET':
-        slots = Slot.objects.all()
-        serializer = SlotSerializer(slots, many=True)
-        return Response(serializer.data)
-
-    elif request.method == 'POST':
-        serializer = ShopperSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status = status.HTTP_201_CREATED)
-        return Response(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
 
 
 

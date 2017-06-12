@@ -9,9 +9,11 @@ from .serializers import CartSerializer
 from .serializers import CartItemSerializer
 from django.core import serializers
 from rest_framework.response import Response
+from django.views.decorators.csrf import csrf_protect
 
 
 @api_view(['GET', 'POST'])
+@csrf_protect
 def cart_list(request):
 
     if request.method == 'GET':
@@ -29,10 +31,10 @@ def cart_list(request):
 
 # To get product according to its pk
 @api_view(['GET', 'PUT', 'DELETE'])
-def cart_id(request, pk):
+def cart_id(request, no):
 
     try:
-        part = Cart.objects.get(pk=pk)
+        part = Cart.objects.get(UserPhone=no)
     except Cart.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
@@ -53,6 +55,7 @@ def cart_id(request, pk):
 
 
 @api_view(['GET', 'POST'])
+@csrf_protect
 def item_list(request):
 
     if request.method == 'GET':
@@ -97,16 +100,21 @@ def cart_itemlist(request, pk):
 
     try:
 
-        g = Cart.objects.get(pk=pk)
+        g = Cart.objects.get(UserPhone=pk)
         allitems = g.carts.all()
+    except Cart.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'GET':
+        serializer = CartItemSerializer(allitems, many=True)
+        return Response(serializer.data)
 
         # error : 'Cart' object has no attribute 'user_set'
         # allitems = g.cartitem_set.all()     # error : no attribute named 'Cart'
         # filter is used in case of many possible results
 
-    except Cart.DoesNotExist:
-        return Response(status=status.HTTP_404_NOT_FOUND)
 
+    """
     if request.method == 'GET':
 
         abc = serializers.serialize('json', allitems)
@@ -114,4 +122,5 @@ def cart_itemlist(request, pk):
         # return JsonResponse(allitems, safe=False)
         return HttpResponse(abc, content_type="application/json")
 
+    """
 

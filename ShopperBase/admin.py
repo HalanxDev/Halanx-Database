@@ -1,9 +1,8 @@
 from django.contrib import admin
-from .models import Shopper, Slot
+from .models import Shopper
 
 
 admin.site.register(Shopper)
-admin.site.register(Slot)
 
 
 

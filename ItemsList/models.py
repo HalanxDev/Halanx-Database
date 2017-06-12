@@ -4,7 +4,8 @@ from UserBase.models import User
 
 
 class Item(models.Model):
-    Cart = models.ForeignKey('ItemList', null=True, blank=True )    # add on_delete cascade
+
+    Cart = models.ForeignKey('ItemList', null=True, blank=True)    # add on_delete cascade
     Item = models.ForeignKey(Product)
     Quantity = models.FloatField(blank=True, default=1.0)                   # may be decimal also check
     SubTotal = models.FloatField(blank=True, null=True)

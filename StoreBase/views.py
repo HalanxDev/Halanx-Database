@@ -51,11 +51,12 @@ def store_id(request, pk):
 
 
 # to get products in a particular store
+# this is wrong, lol
 @api_view(['GET', 'PUT', 'DELETE'])     # localhost:8000/stores/pk/products
 def store_products(request, pk):
 
     try:
-        part = Product.objects.get(Store=pk)
+        part = Product.objects.get(Store=pk)   # error
     except Product.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 

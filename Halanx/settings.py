@@ -123,12 +123,12 @@ DATABASES = {
 
 
 # sqlite database
-#DATABASES = {
+# DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.db.backends.sqlite3',
 #        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #    }
-#}
+# }
 
 
 
@@ -138,6 +138,8 @@ DATABASES = {
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'Asia/Kolkata'
+
+DATE_INPUT_FORMATS = ('%d-%m-%Y', '%Y-%m-%d')
 
 USE_I18N = True
 

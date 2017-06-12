@@ -2,6 +2,7 @@ from django.db import models
 from ItemsList.models import ItemList
 from ShopperBase.models import Shopper
 from BatchBase.models import Batches
+from Halanx import settings
 
 
 RatingChoice = (
@@ -19,7 +20,8 @@ class Order (models.Model):
 
     OrderId = models.IntegerField(unique=True)  # maybe not needed cos pk of class would have the same function
 
-    Items = models.OneToOneField(ItemList, blank=True)                # check
+    Items = models.OneToOneField(ItemList, blank=True, null=True)                # check
+    # Customer = models.ForeignKey(Use)
     BatchId = models.ForeignKey(Batches, blank=True)
     ShopperId = models.ForeignKey(Shopper, null=True, blank=True)
 
@@ -45,15 +47,17 @@ class Order (models.Model):
     def __str__(self):
         return str(self.OrderId)
 
+
+    """
     def save(self, *args, **kwargs):  # override save function of model class
-        self.Total = self.Items.Total
+        # self.Total = self.Items.Total
         # attach code for earnings of shopper in this order
 
-        if self.IsDelivered == True:
+        if self.IsDelivered:
             temp = self.ShopperId.AvgRating*self.ShopperId.n
-            temp1 = self.Items.Customer.AvgRating*self.Items.Customer.n
+            # temp1 = self.Items.Customer.AvgRating*self.Items.Customer.n
             self.ShopperId.n +=1
-            self.Items.Customer.n +=1
+            # self.Items.Customer.n +=1
             temp += self.ShopperRating
             temp1 += self.UserRating
             self.ShopperId.AvgRating /= self.ShopperId.n
@@ -62,7 +66,7 @@ class Order (models.Model):
         self.BatchId.Earning += self.Earnings
         super(Order, self).save(*args, **kwargs)
 
-
+    """
 
 
 
