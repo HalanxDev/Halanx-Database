@@ -10,7 +10,10 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BatchBase/migrations/0001_initial.py" afterPath="$PROJECT_DIR$/BatchBase/migrations/0001_initial.py" />
+<<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BatchBase/models.py" afterPath="$PROJECT_DIR$/BatchBase/models.py" />
+=======
+>>>>>>> 00fb1996c369d73bf36067bf3cd8aca96e95305e
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BatchBase/urls.py" afterPath="$PROJECT_DIR$/BatchBase/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BatchBase/views.py" afterPath="$PROJECT_DIR$/BatchBase/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Carts/models.py" afterPath="$PROJECT_DIR$/Carts/models.py" />
@@ -19,7 +22,10 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Halanx/settings.py" afterPath="$PROJECT_DIR$/Halanx/settings.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Halanx/urls.py" afterPath="$PROJECT_DIR$/Halanx/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ItemsList/migrations/0001_initial.py" afterPath="$PROJECT_DIR$/ItemsList/migrations/0001_initial.py" />
+<<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ItemsList/models.py" afterPath="$PROJECT_DIR$/ItemsList/models.py" />
+=======
+>>>>>>> 00fb1996c369d73bf36067bf3cd8aca96e95305e
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OrderBase/migrations/0001_initial.py" afterPath="$PROJECT_DIR$/OrderBase/migrations/0001_initial.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OrderBase/models.py" afterPath="$PROJECT_DIR$/OrderBase/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Products/migrations/0001_initial.py" afterPath="$PROJECT_DIR$/Products/migrations/0001_initial.py" />
@@ -31,7 +37,10 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShopperBase/urls.py" afterPath="$PROJECT_DIR$/ShopperBase/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShopperBase/views.py" afterPath="$PROJECT_DIR$/ShopperBase/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StoreBase/migrations/0001_initial.py" afterPath="$PROJECT_DIR$/StoreBase/migrations/0001_initial.py" />
+<<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StoreBase/models.py" afterPath="$PROJECT_DIR$/StoreBase/models.py" />
+=======
+>>>>>>> 00fb1996c369d73bf36067bf3cd8aca96e95305e
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StoreBase/serializers.py" afterPath="$PROJECT_DIR$/StoreBase/serializers.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StoreBase/urls.py" afterPath="$PROJECT_DIR$/StoreBase/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StoreBase/views.py" afterPath="$PROJECT_DIR$/StoreBase/views.py" />
@@ -57,8 +66,13 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BatchBase/models.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="198">
               <caret line="11" column="59" lean-forward="false" selection-start-line="11" selection-start-column="59" selection-end-line="11" selection-end-column="59" />
+=======
+            <state relative-caret-position="126">
+              <caret line="7" column="42" lean-forward="false" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
+>>>>>>> 00fb1996c369d73bf36067bf3cd8aca96e95305e
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -66,6 +80,7 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Carts/models.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -73,29 +88,64 @@
               <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
+=======
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BatchBase/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+                <marker date="1496852913547" expanded="true" signature="70:327" ph="..." />
+>>>>>>> 00fb1996c369d73bf36067bf3cd8aca96e95305e
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Carts/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="252">
               <caret line="108" column="50" lean-forward="true" selection-start-line="108" selection-start-column="50" selection-end-line="108" selection-end-column="50" />
+=======
+      <file leaf-file-name="serializers.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BatchBase/serializers.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+>>>>>>> 00fb1996c369d73bf36067bf3cd8aca96e95305e
               <folding>
-                <element signature="e#2#26#0" expanded="true" />
+                <element signature="e#0#38#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Halanx/settings.py">
+      <file leaf-file-name="tests.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BatchBase/tests.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="383">
               <caret line="108" column="0" lean-forward="true" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+=======
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 00fb1996c369d73bf36067bf3cd8aca96e95305e
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BatchBase/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="227">
+              <caret line="81" column="16" lean-forward="false" selection-start-line="81" selection-start-column="16" selection-end-line="81" selection-end-column="16" />
+              <folding>
+                <element signature="e#2#48#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -103,28 +153,73 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ShopperBase/models.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="353">
               <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
               <folding />
+=======
+            <state relative-caret-position="18">
+              <caret line="5" column="7" lean-forward="false" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+>>>>>>> 00fb1996c369d73bf36067bf3cd8aca96e95305e
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/Products/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="338">
               <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+=======
+        <entry file="file://$PROJECT_DIR$/OrderBase/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="370">
+              <caret line="39" column="57" lean-forward="false" selection-start-line="39" selection-start-column="57" selection-end-line="39" selection-end-column="57" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Carts/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="83">
+              <caret line="58" column="23" lean-forward="true" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
+              <folding>
+                <element signature="e#2#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ShopperBase/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-281">
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+>>>>>>> 00fb1996c369d73bf36067bf3cd8aca96e95305e
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< HEAD
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OrderBase/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="101">
               <caret line="22" column="55" lean-forward="false" selection-start-line="22" selection-start-column="55" selection-end-line="22" selection-end-column="55" />
+=======
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Carts/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="66" lean-forward="false" selection-start-line="6" selection-start-column="66" selection-end-line="6" selection-end-column="66" />
+>>>>>>> 00fb1996c369d73bf36067bf3cd8aca96e95305e
               <folding />
             </state>
           </provider>
@@ -173,9 +268,17 @@
         <option value="$PROJECT_DIR$/Products/admin.py" />
         <option value="$PROJECT_DIR$/Products/views.py" />
         <option value="$PROJECT_DIR$/StoreBase/admin.py" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/ItemsList/serializers.py" />
         <option value="$PROJECT_DIR$/Carts/serializers.py" />
         <option value="$PROJECT_DIR$/OrderBase/views.py" />
+=======
+        <option value="$PROJECT_DIR$/ItemsList/models.py" />
+        <option value="$PROJECT_DIR$/ItemsList/serializers.py" />
+        <option value="$PROJECT_DIR$/Carts/serializers.py" />
+        <option value="$PROJECT_DIR$/OrderBase/views.py" />
+        <option value="$PROJECT_DIR$/StoreBase/models.py" />
+>>>>>>> 00fb1996c369d73bf36067bf3cd8aca96e95305e
         <option value="$PROJECT_DIR$/ItemsList/urls.py" />
         <option value="$PROJECT_DIR$/ItemsList/views.py" />
         <option value="$PROJECT_DIR$/OrderBase/admin.py" />
@@ -187,12 +290,22 @@
         <option value="$PROJECT_DIR$/Carts/admin.py" />
         <option value="$PROJECT_DIR$/ShopperBase/serializers.py" />
         <option value="$PROJECT_DIR$/ShopperBase/admin.py" />
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/BatchBase/models.py" />
+        <option value="$PROJECT_DIR$/OrderBase/models.py" />
+        <option value="$PROJECT_DIR$/StoreBase/views.py" />
+>>>>>>> 00fb1996c369d73bf36067bf3cd8aca96e95305e
         <option value="$PROJECT_DIR$/StoreBase/serializers.py" />
         <option value="$PROJECT_DIR$/StoreBase/urls.py" />
         <option value="$PROJECT_DIR$/Halanx/settings.py" />
         <option value="$PROJECT_DIR$/Halanx/urls.py" />
         <option value="$PROJECT_DIR$/UserBase/serializers.py" />
         <option value="$PROJECT_DIR$/UserBase/views.py" />
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/UserBase/models.py" />
+>>>>>>> 00fb1996c369d73bf36067bf3cd8aca96e95305e
         <option value="$PROJECT_DIR$/ShopperBase/apps.py" />
         <option value="$PROJECT_DIR$/Products/models.py" />
         <option value="$PROJECT_DIR$/ShopperBase/models.py" />
@@ -201,6 +314,7 @@
         <option value="$PROJECT_DIR$/UserBase/urls.py" />
         <option value="$PROJECT_DIR$/BatchBase/urls.py" />
         <option value="$PROJECT_DIR$/BatchBase/views.py" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/Carts/urls.py" />
         <option value="$PROJECT_DIR$/StoreBase/models.py" />
         <option value="$PROJECT_DIR$/StoreBase/views.py" />
@@ -208,7 +322,10 @@
         <option value="$PROJECT_DIR$/ItemsList/models.py" />
         <option value="$PROJECT_DIR$/OrderBase/models.py" />
         <option value="$PROJECT_DIR$/UserBase/models.py" />
+=======
+>>>>>>> 00fb1996c369d73bf36067bf3cd8aca96e95305e
         <option value="$PROJECT_DIR$/Carts/models.py" />
+        <option value="$PROJECT_DIR$/Carts/urls.py" />
         <option value="$PROJECT_DIR$/Carts/views.py" />
       </list>
     </option>
@@ -240,7 +357,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
       <pane id="Scope" />
+=======
+>>>>>>> 00fb1996c369d73bf36067bf3cd8aca96e95305e
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -399,6 +519,10 @@
           </PATH>
         </subPane>
       </pane>
+<<<<<<< HEAD
+=======
+      <pane id="Scope" />
+>>>>>>> 00fb1996c369d73bf36067bf3cd8aca96e95305e
       <pane id="Scratches" />
     </panes>
   </component>
@@ -626,6 +750,15 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/ItemsList/serializers.py">
+<<<<<<< HEAD
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BatchBase/apps.py">
+=======
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
@@ -640,12 +773,23 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/OrderBase/serializers.py">
+>>>>>>> 00fb1996c369d73bf36067bf3cd8aca96e95305e
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="2" column="25" lean-forward="false" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/OrderBase/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="2" column="25" lean-forward="false" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OrderBase/views.py">
+=======
     <entry file="file://$PROJECT_DIR$/OrderBase/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="846">
@@ -661,12 +805,23 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/requirements.txt">
+>>>>>>> 00fb1996c369d73bf36067bf3cd8aca96e95305e
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="846">
+          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/BatchBase/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+=======
     <entry file="file://$PROJECT_DIR$/.elasticbeanstalk/config.yml" />
     <entry file="file://$PROJECT_DIR$/.ebextensions/django.config">
       <provider selected="true" editor-type-id="text-editor">
@@ -676,12 +831,40 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
+>>>>>>> 00fb1996c369d73bf36067bf3cd8aca96e95305e
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/.elasticbeanstalk/config.yml" />
+    <entry file="file://$PROJECT_DIR$/.ebextensions/django.config">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+=======
+    <entry file="file://$PROJECT_DIR$/ItemsList/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Carts/serializers.py">
+>>>>>>> 00fb1996c369d73bf36067bf3cd8aca96e95305e
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/ItemsList/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -711,6 +894,22 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ShopperBase/admin.py">
+=======
+    <entry file="file://$PROJECT_DIR$/Products/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Carts/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="6" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ShopperBase/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="1" column="27" lean-forward="false" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
@@ -725,20 +924,58 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Products/apps.py">
+>>>>>>> 00fb1996c369d73bf36067bf3cd8aca96e95305e
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="18">
+          <caret line="1" column="27" lean-forward="false" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/Products/admin.py">
+=======
     <entry file="file://$PROJECT_DIR$/Products/serializers.py">
+>>>>>>> 00fb1996c369d73bf36067bf3cd8aca96e95305e
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/Products/apps.py">
+=======
     <entry file="file://$PROJECT_DIR$/Products/urls.py">
+>>>>>>> 00fb1996c369d73bf36067bf3cd8aca96e95305e
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/Products/serializers.py">
+=======
+    <entry file="file://$PROJECT_DIR$/OrderBase/admin.py">
+>>>>>>> 00fb1996c369d73bf36067bf3cd8aca96e95305e
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/Products/urls.py">
+=======
+    <entry file="file://$PROJECT_DIR$/ItemsList/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StoreBase/tests.py">
+>>>>>>> 00fb1996c369d73bf36067bf3cd8aca96e95305e
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -747,6 +984,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/OrderBase/admin.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
@@ -767,19 +1005,47 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/UserBase/migrations/0001_initial.py">
+=======
+        <state relative-caret-position="353">
+          <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StoreBase/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="14" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StoreBase/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ShopperBase/tests.py">
+>>>>>>> 00fb1996c369d73bf36067bf3cd8aca96e95305e
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/UserBase/migrations/0002_auto_20170607_0622.py">
+=======
+    <entry file="file://$PROJECT_DIR$/UserBase/migrations/0001_initial.py">
+>>>>>>> 00fb1996c369d73bf36067bf3cd8aca96e95305e
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/UserBase/tests.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -847,19 +1113,126 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="11" column="51" lean-forward="true" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
+=======
+    <entry file="file://$PROJECT_DIR$/UserBase/migrations/0002_auto_20170607_0622.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BatchBase/serializers.py">
+    <entry file="file://$PROJECT_DIR$/UserBase/tests.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StoreBase/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="7" column="8" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UserBase/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="25" lean-forward="false" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#0#38#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/UserBase/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding>
+            <element signature="e#1#25#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ShopperBase/apps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#39#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UserBase/apps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#39#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Products/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#28#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ShopperBase/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="1" column="27" lean-forward="false" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UserBase/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="4" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UserBase/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#32#0" expanded="false" />
+          </folding>
+>>>>>>> 00fb1996c369d73bf36067bf3cd8aca96e95305e
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ShopperBase/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="18">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+=======
+        <state relative-caret-position="108">
+          <caret line="6" column="24" lean-forward="false" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#32#0" expanded="false" />
+>>>>>>> 00fb1996c369d73bf36067bf3cd8aca96e95305e
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/BatchBase/tests.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -920,20 +1293,84 @@
           <caret line="77" column="0" lean-forward="true" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
           <folding>
             <element signature="e#1#45#0" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/ShopperBase/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding>
+            <element signature="e#2#29#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Halanx/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="521">
+          <caret line="108" column="0" lean-forward="true" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Halanx/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="11" column="51" lean-forward="true" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BatchBase/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BatchBase/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BatchBase/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+            <marker date="1496852913547" expanded="true" signature="70:327" ph="..." />
+>>>>>>> 00fb1996c369d73bf36067bf3cd8aca96e95305e
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/ShopperBase/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="353">
           <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding />
+=======
+    <entry file="file://$PROJECT_DIR$/BatchBase/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="42" lean-forward="false" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+>>>>>>> 00fb1996c369d73bf36067bf3cd8aca96e95305e
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Products/models.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="338">
           <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding />
@@ -947,11 +1384,17 @@
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
+=======
+        <state relative-caret-position="370">
+          <caret line="39" column="57" lean-forward="false" selection-start-line="39" selection-start-column="57" selection-end-line="39" selection-end-column="57" />
+          <folding />
+>>>>>>> 00fb1996c369d73bf36067bf3cd8aca96e95305e
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Halanx/settings.py">
+    <entry file="file://$PROJECT_DIR$/BatchBase/views.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="383">
           <caret line="108" column="0" lean-forward="true" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
           <folding />
@@ -964,20 +1407,44 @@
           <caret line="11" column="59" lean-forward="false" selection-start-line="11" selection-start-column="59" selection-end-line="11" selection-end-column="59" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
+=======
+        <state relative-caret-position="227">
+          <caret line="81" column="16" lean-forward="false" selection-start-line="81" selection-start-column="16" selection-end-line="81" selection-end-column="16" />
+          <folding>
+            <element signature="e#2#48#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Carts/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="5" column="7" lean-forward="false" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+>>>>>>> 00fb1996c369d73bf36067bf3cd8aca96e95305e
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/ItemsList/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="8" column="7" lean-forward="false" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+=======
+    <entry file="file://$PROJECT_DIR$/Carts/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="66" lean-forward="false" selection-start-line="6" selection-start-column="66" selection-end-line="6" selection-end-column="66" />
+>>>>>>> 00fb1996c369d73bf36067bf3cd8aca96e95305e
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/OrderBase/models.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="101">
           <caret line="22" column="55" lean-forward="false" selection-start-line="22" selection-start-column="55" selection-end-line="22" selection-end-column="55" />
           <folding />
@@ -1009,6 +1476,21 @@
           <folding>
             <element signature="e#2#26#0" expanded="true" />
           </folding>
+=======
+        <state relative-caret-position="83">
+          <caret line="58" column="23" lean-forward="true" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
+          <folding>
+            <element signature="e#2#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ShopperBase/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-281">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+>>>>>>> 00fb1996c369d73bf36067bf3cd8aca96e95305e
         </state>
       </provider>
     </entry>
