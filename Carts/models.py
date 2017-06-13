@@ -6,6 +6,7 @@ from UserBase.models import User
 class CartItem(models.Model):
     Cart = models.ForeignKey('Cart', null=True, blank=True, default=1, related_name="carts")    # add on_delete cascade
     Item = models.ForeignKey(Product)
+    CartPhoneNo = models.BigIntegerField(blank=True, null=True)
     # CartNo = models.IntegerField(blank=True, default=1)
     # there is no need for this .. rectify error in views_cart_items
     
@@ -16,6 +17,8 @@ class CartItem(models.Model):
 
     def save(self, *args, **kwargs):
         self.SubTotal = self.Item.Price * self.Quantity
+        g = Cart.objects.get(UserPhone=self.CartPhoneNo)
+        self.Cart = g
         self.Cart.Total = self.Cart.Total + (self.Item.Price*self.Quantity)
         # self.CartNo = self.Cart.pk
         super(CartItem, self).save(*args, **kwargs)
@@ -31,9 +34,6 @@ class Cart(models.Model):             # object of this class shall be updated as
 
     UserPhone = models.BigIntegerField(unique=True, null=True, blank=True)
 
-    # AllItems = models.ManyToManyField(CartItem, blank=True)
-    # not req. but nothing else working
-
     DeliveryCharges = models.FloatField(blank=True, default=0.0)
     timestamp = models.DateTimeField(blank=True, auto_now=True)     # timestamp change as soon as cart changes
     Active = models.BooleanField(blank=True, default=True)
@@ -43,7 +43,8 @@ class Cart(models.Model):             # object of this class shall be updated as
 
     def save(self, *args, **kwargs):
 
-        self.UserPhone = self.Username.PhoneNo
+        g = User.objects.get(PhoneNo=self.UserPhone)
+        self.Username = g
 
         # attach algo for delivery charges
         super(Cart, self).save(*args, **kwargs)

@@ -95,7 +95,7 @@ def item_id(request, pk):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
-@api_view(['GET'])
+@api_view(['GET', 'POST'])
 def cart_itemlist(request, pk):
 
     try:
@@ -108,6 +108,13 @@ def cart_itemlist(request, pk):
     if request.method == 'GET':
         serializer = CartItemSerializer(allitems, many=True)
         return Response(serializer.data)
+
+    if request.method == 'POST':
+        serializer = CartItemSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
         # error : 'Cart' object has no attribute 'user_set'
         # allitems = g.cartitem_set.all()     # error : no attribute named 'Cart'
