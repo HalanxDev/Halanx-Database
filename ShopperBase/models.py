@@ -20,7 +20,7 @@ class Shopper(models.Model):
     FirstName = models.CharField(max_length=200)
     LastName = models.CharField(max_length=200)
     PhoneNo = models.BigIntegerField(unique=True)
-    password = models.CharField(max_length=1000, null=True)
+    password = models.CharField(max_length=1000, blank=True, null=True)
     EmailId = models.EmailField(blank=True)
 
     City = models.CharField(max_length=200, null=True, blank=True, default='Delhi')

@@ -20,9 +20,9 @@ class Order (models.Model):
 
     OrderId = models.IntegerField(unique=True)  # maybe not needed cos pk of class would have the same function
 
-    Items = models.OneToOneField(ItemList, blank=True, null=True)                # check
+    # Items = models.OneToOneField(ItemList, blank=True, null=True)                # check
 
-    Items = models.OneToOneField(ItemList, blank=True)                # check
+    # Items = models.OneToOneField(ItemList, blank=True)                # check
 
     # Customer = models.ForeignKey(Use)
     BatchId = models.ForeignKey(Batches, blank=True)

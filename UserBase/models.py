@@ -9,15 +9,9 @@ class User(models.Model):
     EmailId = models.EmailField(blank=True)
     FirstName = models.CharField(max_length=200, blank=True)
     LastName = models.CharField(max_length=200, blank=True)
-    password = models.CharField(max_length=1000, null=True)
+    password = models.CharField(max_length=1000, blank=True, null=True)
     Address = models.CharField(blank=True, null=True, max_length=300)
     logged_in = models.BooleanField(blank=True, default=True)
-
-    PhoneNo = models.BigIntegerField(unique=True)
-    EmailId = models.EmailField(blank=True)
-    FirstName = models.CharField(max_length=200, blank=True)
-    LastName = models.CharField(max_length=200, blank=True)
-    Address = models.CharField(blank=True, null=True, max_length=300)
 
     AvgRating = models.FloatField(default=3.0, blank=True)
     n = models.IntegerField(default=0, blank=True)     # denotes number of times user has been rated
@@ -26,7 +20,6 @@ class User(models.Model):
 
         return str(self.PhoneNo)
 
-        return str(self.id)
 
 
 

@@ -31,8 +31,6 @@ class Cart(models.Model):             # object of this class shall be updated as
 
     UserPhone = models.BigIntegerField(unique=True, null=True, blank=True)
 
-    UserPhone = models.BigIntegerField(unique=True, null=True)
-
     # AllItems = models.ManyToManyField(CartItem, blank=True)
     # not req. but nothing else working
 
