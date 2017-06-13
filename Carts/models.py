@@ -28,11 +28,11 @@ class Cart(models.Model):             # object of this class shall be updated as
 
     Username = models.OneToOneField(User, blank=True, null=True)
     Total = models.FloatField(blank=True, default=0.0)
-<<<<<<< HEAD
+
     UserPhone = models.BigIntegerField(unique=True, null=True, blank=True)
-=======
+
     UserPhone = models.BigIntegerField(unique=True, null=True)
->>>>>>> 00fb1996c369d73bf36067bf3cd8aca96e95305e
+
     # AllItems = models.ManyToManyField(CartItem, blank=True)
     # not req. but nothing else working
 
