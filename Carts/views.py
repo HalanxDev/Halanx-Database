@@ -9,14 +9,13 @@ from .serializers import CartSerializer
 from .serializers import CartItemSerializer
 from django.core import serializers
 from rest_framework.response import Response
-from django.views.decorators.csrf import csrf_protect
 
 
 @api_view(['GET', 'POST'])
-@csrf_protect
 def cart_list(request):
 
     if request.method == 'GET':
+
         carts = Cart.objects.all()
         serializer = CartSerializer(carts, many=True)
         return Response(serializer.data)
@@ -39,6 +38,7 @@ def cart_id(request, no):
         return Response(status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'GET':
+
         serializer = CartSerializer(part)
         return Response(serializer.data)
 
@@ -55,7 +55,6 @@ def cart_id(request, no):
 
 
 @api_view(['GET', 'POST'])
-@csrf_protect
 def item_list(request):
 
     if request.method == 'GET':
@@ -102,6 +101,7 @@ def cart_itemlist(request, pk):
 
         g = Cart.objects.get(UserPhone=pk)
         allitems = g.carts.all()
+
     except Cart.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 

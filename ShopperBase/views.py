@@ -1,13 +1,14 @@
 
 
-from .models import Shopper
+from .models import Shopper, Documents
 from rest_framework.decorators import api_view
 from rest_framework import status
-from .serializers import ShopperSerializer
+from .serializers import ShopperSerializer, DocumentSerializer
 from rest_framework.response import Response
 
-# create method for displaying all timeslots of a particular date
-# have to use regex in urls.py
+import boto3
+import base64
+import json
 
 
 @api_view(['GET', 'POST'])
@@ -49,6 +50,126 @@ def shopper_id(request, no):
     elif request.method == 'DELETE':
         part.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+@api_view(['GET','DELETE'])
+def get_documents(request, who):
+
+    try:
+        document = Documents.objects.get(ShopperPhoneNo=who)
+    except Documents.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'GET':
+        serializer = DocumentSerializer(document)
+        return Response(serializer.data)
+
+    elif request.method == 'DELETE':
+        document.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+@api_view(['GET', 'POST'])
+def post_documents(request):
+
+    if request.method == 'GET':
+        docs = Documents.objects.all()
+        serializer = DocumentSerializer(docs, many=True)
+        return Response(serializer.data)
+
+    if request.method == 'POST':
+
+        data = request.data
+
+        if data['AadharImage'] is not None:
+
+            filename = '%s/Aadhar.jpeg' % data['ShopperPhoneNo']
+            client = boto3.client('s3')
+            img1 = base64.b64decode(data['AadharImage'])
+            client.put_object(Bucket='halanx-shopper-documents',
+                              ACL='public-read',
+                              Key=filename, ContentType='jpeg',
+                              Body=img1)
+
+        if data['LicenseImage'] is not None:
+
+            filename = '%s/License.jpeg' % data['ShopperPhoneNo']
+            client = boto3.client('s3')
+            img2 = base64.b64decode(data['LicenseImage'])
+            client.put_object(Bucket='halanx-shopper-documents',
+                              ACL='public-read',
+                              Key=filename, ContentType='jpeg',
+                              Body=img2)
+
+        if data['VehicleRCImage'] is not None:
+
+            filename = '%s/Vehicle-RC.jpeg' % data['ShopperPhoneNo']
+            client = boto3.client('s3')
+            img3 = base64.b64decode(data['VehicleRCImage'])
+            client.put_object(Bucket='halanx-shopper-documents',
+                              ACL='public-read',
+                              Key=filename, ContentType='jpeg',
+                              Body=img3)
+
+        serializer = DocumentSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+
+            g = Documents.objects.get(ShopperPhoneNo=data['ShopperPhoneNo'])
+
+            if g.AadharImage is not None:
+                filename = '%s/Aadhar.jpeg' % g.ShopperPhoneNo
+                g.AadharURL = 'https://s3-us-west-2.amazonaws.com/halanx-shopper-documents/' + filename
+                g.AadharImage = None
+
+            if g.LicenseImage is not None:
+                filename = '%s/License.jpeg' % g.ShopperPhoneNo
+                g.LicenseURL = 'https://s3-us-west-2.amazonaws.com/halanx-shopper-documents/' + filename
+                g.LicenseImage = None
+
+            if g.VehicleRCImage is not None:
+                filename = '%s/Vehicle-RC.jpeg' % g.ShopperPhoneNo
+                g.VehicleRCURL = 'https://s3-us-west-2.amazonaws.com/halanx-shopper-documents/' + filename
+                g.VehicleRCImage = None
+
+            g.save()
+
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

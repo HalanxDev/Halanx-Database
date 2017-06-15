@@ -47,5 +47,21 @@ class Shopper(models.Model):
         return str(self.PhoneNo)
 
 
+class Documents(models.Model):
+
+    ShopperPhoneNo = models.BigIntegerField(unique=True)
+
+    AadharImage = models.TextField(blank=True, null=True)
+    LicenseImage = models.TextField(blank=True, null=True)
+    VehicleRCImage = models.TextField(blank=True, null=True)
+
+    AadharURL = models.CharField(max_length=500, blank=True, null=True)
+    LicenseURL = models.CharField(max_length=500, blank=True, null=True)
+    VehicleRCURL = models.CharField(max_length=500, blank=True, null=True)
+
+    def __str__(self):
+        return str(self.ShopperPhoneNo)
+
+
 
 

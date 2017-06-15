@@ -4,17 +4,22 @@ from rest_framework.decorators import api_view
 from rest_framework import status
 from .serializers import ProductSerializer
 from rest_framework.response import Response
+import json, base64
 
 
 @api_view(['GET', 'POST'])
 def product_list(request):
 
     if request.method == 'GET':
+        # print "abc"
         products = Product.objects.all()
         serializer = ProductSerializer(products, many=True)
         return Response(serializer.data)
 
     elif request.method == 'POST':
+        data1 = request.data
+        print data1['ProductImage']
+        print "abc"
         serializer = ProductSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -36,9 +41,10 @@ def product_id(request, pk):
         return Response(serializer.data)
 
     elif request.method == 'PUT':
+
         serializer = ProductSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save()
+            serializer.update(part, request.data)
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 

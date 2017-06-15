@@ -20,6 +20,7 @@ class CartItem(models.Model):
         g = Cart.objects.get(UserPhone=self.CartPhoneNo)
         self.Cart = g
         self.Cart.Total = self.Cart.Total + (self.Item.Price*self.Quantity)
+        self.Cart.save()
         # self.CartNo = self.Cart.pk
         super(CartItem, self).save(*args, **kwargs)
 
