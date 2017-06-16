@@ -1,8 +1,8 @@
 from django.db import models
-from ItemsList.models import ItemList
 from ShopperBase.models import Shopper
 from BatchBase.models import Batches
 from Halanx import settings
+from UserBase.models import User
 
 
 RatingChoice = (
@@ -18,37 +18,40 @@ RatingChoice = (
 
 class Order (models.Model):
 
-    OrderId = models.IntegerField(unique=True)  # maybe not needed cos pk of class would have the same function
+    # ListId = models.OneToOneField(OrderList, unique=True, blank=True)  # maybe not needed cos pk of class would have the same function
 
     # Items = models.OneToOneField(ItemList, blank=True, null=True)                # check
 
     # Items = models.OneToOneField(ItemList, blank=True)                # check
 
-    # Customer = models.ForeignKey(Use)
-    BatchId = models.ForeignKey(Batches, blank=True)
+    Customer = models.ForeignKey(User, null=True, blank=True)
+    BatchId = models.ForeignKey(Batches, null=True,  blank=True)
     ShopperId = models.ForeignKey(Shopper, null=True, blank=True)
+
+    CustomerPhoneNo = models.BigIntegerField(null=True)
+    ShopperPhoneNo = models.BigIntegerField(null=True, blank=True)
 
     Total = models.FloatField(blank=True, null=True)
     DeliveryCharge = models.FloatField(null=True, blank=True, default=0.0)
 
     PlacingTime = models.DateTimeField(auto_now_add=True)
-    DeliveryAddress = models.CharField(max_length=300, null=True)
+    DeliveryAddress = models.CharField(max_length=300, null=True, blank=True)
     Earnings = models.FloatField(null=True, blank=True, default=0.0)
 
-    UserRating = models.IntegerField(choices=RatingChoice, default=3)
-    ShopperRating = models.IntegerField(choices=RatingChoice, default=3)
+    UserRating = models.FloatField(choices=RatingChoice, default=3.0)
+    ShopperRating = models.FloatField(choices=RatingChoice, default=3.0)
 
-    IsDelivered = models.BooleanField(default=False)
+    IsDelivered = models.BooleanField(default=False, blank=True)
 
     DeliveryDate = models.DateField(null=True, blank=True)
     StartTime = models.TimeField(null=True, blank=True)
     EndTime = models.TimeField(null=True, blank=True)
 
     Notes = models.TextField(null=True, blank=True)
-    PriorityScore = models.IntegerField(blank=True, null=True)
+    PriorityScore = models.IntegerField(blank=True, null=True, default=1)
 
     def __str__(self):
-        return str(self.OrderId)
+        return str(self.id)
 
 
     """

@@ -4,12 +4,10 @@ from UserBase.models import User
 
 
 class CartItem(models.Model):
-    Cart = models.ForeignKey('Cart', null=True, blank=True, default=1, related_name="carts")    # add on_delete cascade
+    Cart = models.ForeignKey('Cart', null=True, blank=True, related_name="carts")    # add on_delete cascade
     Item = models.ForeignKey(Product)
-    CartPhoneNo = models.BigIntegerField(blank=True, null=True)
-    # CartNo = models.IntegerField(blank=True, default=1)
-    # there is no need for this .. rectify error in views_cart_items
-    
+    CartPhoneNo = models.BigIntegerField(blank=True, null=True)   # phone of User
+
     Quantity = models.FloatField(blank=True, default=1.0)                   # may be decimal also check
     SubTotal = models.FloatField(blank=True, null=True)
     Notes = models.TextField(null=True, blank=True)

@@ -122,7 +122,7 @@ def post_documents(request):
                 g.AadharURL = 'https://s3-us-west-2.amazonaws.com/halanx-shopper-documents/' + filename
                 g.AadharImage = None
 
-            if g.LicenseImage is not None:
+            if g.LicenseImage != None:
                 filename = '%s/License.jpeg' % g.ShopperPhoneNo
                 g.LicenseURL = 'https://s3-us-west-2.amazonaws.com/halanx-shopper-documents/' + filename
                 g.LicenseImage = None

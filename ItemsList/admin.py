@@ -1,10 +1,9 @@
 from django.contrib import admin
-from .models import ItemList
-from .models import Item
+from .models import OrderItem
 
 
-admin.site.register(Item)
-admin.site.register(ItemList)
+admin.site.register(OrderItem)
+
 
 
 

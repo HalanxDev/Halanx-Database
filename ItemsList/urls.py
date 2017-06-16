@@ -3,8 +3,8 @@ from . import views
 
 
 urlpatterns = [
-    url(r'^$',views.itemslist_list),
-    url(r'^(?P<pk>[0-9]+)', views.itemslist_id),
+    url(r'^$',views.item_list),
+    url(r'^(?P<pk>[0-9]+)', views.items_id),
 
 ]
 

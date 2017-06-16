@@ -3,8 +3,9 @@ from . import views
 
 
 urlpatterns = [
-    url(r'^$',views.order_list),
+    url(r'^$', views.order_list),
     url(r'^(?P<pk>[0-9]+)', views.order_id),
+    url(r'^(?P<pk>[0-9]+)/items', views.order_items),
 ]
 
 

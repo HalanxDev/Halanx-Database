@@ -9,4 +9,10 @@ class OrderSerializer(serializers.ModelSerializer):
         model = Order
         fields = '__all__'
 
+    def create(self, validated_data):
+        obj = Order.objects.create(**validated_data)
+        obj.save()
+        return obj.id
+
+
 
