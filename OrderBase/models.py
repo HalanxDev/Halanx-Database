@@ -18,21 +18,24 @@ RatingChoice = (
 
 class Order (models.Model):
 
-    # ListId = models.OneToOneField(OrderList, unique=True, blank=True)  # maybe not needed cos pk of class would have the same function
+    # ListId = models.OneToOneField(OrderList, unique=True, blank=True)
+    #  maybe not needed cos pk of class would have the same function
 
     # Items = models.OneToOneField(ItemList, blank=True, null=True)                # check
 
     # Items = models.OneToOneField(ItemList, blank=True)                # check
 
-    Customer = models.ForeignKey(User, null=True, blank=True)
-    BatchId = models.ForeignKey(Batches, null=True,  blank=True)
-    ShopperId = models.ForeignKey(Shopper, null=True, blank=True)
+    # Customer = models.ForeignKey(User, null=True, blank=True)
+    # BatchId = models.ForeignKey(Batches, null=True,  blank=True)
+    # ShopperId = models.ForeignKey(Shopper, null=True, blank=True)
+
+    # these three fields are giving error 'long' object has no field 'customer'
 
     CustomerPhoneNo = models.BigIntegerField(null=True)
     ShopperPhoneNo = models.BigIntegerField(null=True, blank=True)
 
     Total = models.FloatField(blank=True, null=True)
-    DeliveryCharge = models.FloatField(null=True, blank=True, default=0.0)
+    DeliveryCharges = models.FloatField(null=True, blank=True, default=0.0)
 
     PlacingTime = models.DateTimeField(auto_now_add=True)
     DeliveryAddress = models.CharField(max_length=300, null=True, blank=True)

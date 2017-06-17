@@ -7,7 +7,7 @@ from rest_framework import status
 from rest_framework.response import Response
 
 
-@api_view(['GET','POST'])
+@api_view(['GET', 'POST'])
 def item_list(request):
 
     if request.method == 'GET':
@@ -17,10 +17,10 @@ def item_list(request):
 
     elif request.method == 'POST':
         serializer = OrderItemSerializer(data=request.data)
-        if serializer.is_valid:
+        if serializer.is_valid():
             serializer.save()
-            return Response(serializer.data, status=HTTP_201_CREATED)
-        return Response(serializer.errors, status=HTTP_400_BAD_REQUEST)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(['GET', 'PUT', 'DELETE'])
@@ -36,15 +36,16 @@ def items_id(request, pk):
         return Response(serializer.data)
 
     elif request.method == 'PUT':
+
         serializer = OrderItemSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save()
+            serializer.update(part, request.data)
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     elif request.method == 'DELETE':
         part.delete()
-
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
 
 """

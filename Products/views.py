@@ -17,9 +17,6 @@ def product_list(request):
         return Response(serializer.data)
 
     elif request.method == 'POST':
-        data1 = request.data
-        print data1['ProductImage']
-        print "abc"
         serializer = ProductSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()

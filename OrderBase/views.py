@@ -7,6 +7,7 @@ from OrderBase.models import Order
 from ItemsList.models import OrderItem
 from Carts.models import Cart
 from UserBase.models import User
+from Products.models import Product
 from ShopperBase.models import Shopper
 from ItemsList.serializers import OrderItemSerializer
 import requests
@@ -25,42 +26,34 @@ def order_list(request):
     elif request.method == 'POST':
 
         data = request.data
-        print "abc"
+
         cartno = Cart.objects.get(UserPhone=data['CustomerPhoneNo'])
-        print "def"
         allitems = cartno.carts.all()
         itemurl = "http://localhost:8000/itemslist/"
-        print "ok"
-        print cartno.Total
+
         serializer = OrderSerializer(data=request.data)
-        xx = data['CustomerPhoneNo']
+
         if serializer.is_valid():
             cid = serializer.save()
 
-            print cid
-
             curr = Order.objects.get(id=cid)
-            print curr.id
-            print curr.CustomerPhoneNo
-
             curr.Total = cartno.Total
             curr.DeliveryCharges = cartno.DeliveryCharges
 
-            # curr.Customer = User.objects.get(PhoneNo=xx)
             curr.save()
 
-            """
             for obj in allitems:
+
                 context = {
-                    "OList": cid,
-                    "Item": obj.Item,
+                    "OList": curr,
+                    "Item": obj.ProId,
                     "Quantity": obj.Quantity,
                     "SubTotal": obj.SubTotal,
                     "Notes": obj.Notes
                 }
 
                 r = requests.post(itemurl, context)
-            """
+
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 

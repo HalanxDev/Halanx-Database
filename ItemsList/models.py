@@ -7,14 +7,14 @@ from OrderBase.models import Order
 class OrderItem(models.Model):
 
     OList = models.ForeignKey(Order, null=True, blank=True, related_name="items")    # add on_delete cascade
-    Item = models.ForeignKey(Product)
+    # Item = models.ForeignKey(Product, blank=True, null=True)
+    Item = models.IntegerField(blank=True, null=True)
     Quantity = models.FloatField(blank=True, default=1.0)                   # may be decimal also check
     SubTotal = models.FloatField(blank=True, null=True)
     Notes = models.TextField(null=True, blank=True)
 
     def __str__(self):
-        return str(self.OList) + " : " + str(self.Item.pk)
-
+        return str(self.OList) + " : " + str(self.id)
 
 
 

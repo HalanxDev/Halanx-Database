@@ -6,6 +6,8 @@ from UserBase.models import User
 class CartItem(models.Model):
     Cart = models.ForeignKey('Cart', null=True, blank=True, related_name="carts")    # add on_delete cascade
     Item = models.ForeignKey(Product)
+    ProId = models.IntegerField(blank=True, null=True)
+
     CartPhoneNo = models.BigIntegerField(blank=True, null=True)   # phone of User
 
     Quantity = models.FloatField(blank=True, default=1.0)                   # may be decimal also check
@@ -15,6 +17,7 @@ class CartItem(models.Model):
 
     def save(self, *args, **kwargs):
         self.SubTotal = self.Item.Price * self.Quantity
+        self.ProId = self.Item.id
         g = Cart.objects.get(UserPhone=self.CartPhoneNo)
         self.Cart = g
         self.Cart.Total = self.Cart.Total + (self.Item.Price*self.Quantity)

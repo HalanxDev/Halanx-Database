@@ -52,7 +52,7 @@ def shopper_id(request, no):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
-@api_view(['GET','DELETE'])
+@api_view(['GET', 'DELETE'])
 def get_documents(request, who):
 
     try:
@@ -122,7 +122,8 @@ def post_documents(request):
                 g.AadharURL = 'https://s3-us-west-2.amazonaws.com/halanx-shopper-documents/' + filename
                 g.AadharImage = None
 
-            if g.LicenseImage != None:
+            if g.LicenseImage is not None:
+
                 filename = '%s/License.jpeg' % g.ShopperPhoneNo
                 g.LicenseURL = 'https://s3-us-west-2.amazonaws.com/halanx-shopper-documents/' + filename
                 g.LicenseImage = None
