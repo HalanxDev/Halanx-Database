@@ -30,6 +30,7 @@ def order_list(request):
         cartno = Cart.objects.get(UserPhone=data['CustomerPhoneNo'])
         allitems = cartno.carts.all()
         itemurl = "http://localhost:8000/itemslist/"
+        # itemurl = "http://ec2-34-208-181-152.us-west-2.compute.amazonaws.com/itemslist/"
 
         serializer = OrderSerializer(data=request.data)
 
@@ -95,6 +96,27 @@ def order_id(request, pk):
     elif request.method == 'DELETE':
         part.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+@api_view(['GET'])
+def user_orders(request, pk):
+
+    if request.method == 'GET':
+
+        g = Order.objects.filter(CustomerPhoneNo=pk)
+        serializer = OrderSerializer(g, many=True)
+        return Response(serializer.data)
+
+
+
+
+
+
+
+
+
+
+
 
 
 
