@@ -4,12 +4,11 @@ from rest_framework import status
 from rest_framework.response import Response
 from .serializers import OrderSerializer
 from OrderBase.models import Order
-from ItemsList.models import OrderItem
-from Carts.models import Cart
+from Carts.models import Cart, CartItem
 from UserBase.models import User
 from Products.models import Product
 from ShopperBase.models import Shopper
-from ItemsList.serializers import OrderItemSerializer
+from Carts.serializers import CartItemSerializer
 import requests
 
 # create a view for displaying all orders of a particular batch
@@ -27,33 +26,32 @@ def order_list(request):
 
         data = request.data
 
-        cartno = Cart.objects.get(UserPhone=data['CustomerPhoneNo'])
-        allitems = cartno.carts.all()
-        itemurl = "http://localhost:8000/itemslist/"
-        # itemurl = "http://ec2-34-208-181-152.us-west-2.compute.amazonaws.com/itemslist/"
+        items_ordered = CartItem.objects.filter(RemovedFromCart=False, CartPhoneNo=data['CustomerPhoneNo'])
+        # get active items
+
+        tot = 0
+        for an_item in items_ordered:       # change active items to inactive
+            an_item.RemovedFromCart = True
+            an_item.IsOrdered = True
+            tot += an_item.SubTotal
+            an_item.save()
 
         serializer = OrderSerializer(data=request.data)
 
         if serializer.is_valid():
             cid = serializer.save()
 
-            curr = Order.objects.get(id=cid)
-            curr.Total = cartno.Total
-            curr.DeliveryCharges = cartno.DeliveryCharges
+            for an_item in items_ordered:        # change order id of active items
+                an_item.OrderId = cid
+                an_item.save()
 
+            concerned_cart = Cart.objects.get(UserPhone=data['CustomerPhoneNo'])
+            concerned_cart.Total = 0.0
+            concerned_cart.save()            # total of carts is 0 now
+
+            curr = Order.objects.get(id=cid)            # store total of active items in order object
+            curr.Total = tot
             curr.save()
-
-            for obj in allitems:
-
-                context = {
-                    "OList": curr,
-                    "Item": obj.ProId,
-                    "Quantity": obj.Quantity,
-                    "SubTotal": obj.SubTotal,
-                    "Notes": obj.Notes
-                }
-
-                r = requests.post(itemurl, context)
 
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
@@ -64,12 +62,13 @@ def order_items(request, pk):
 
     try:
         part = Order.objects.get(id=pk)
-        allitems = part.items.all()
     except Order.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'GET':
-        serializer = OrderItemSerializer(allitems, many=True)
+
+        allitems = CartItem.objects.filter(OrderId=pk)
+        serializer = CartItemSerializer(allitems, many=True)
         return Response(serializer.data)
 
 
@@ -89,7 +88,7 @@ def order_id(request, pk):
     elif request.method == 'PUT':
         serializer = OrderSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save()
+            serializer.update(part, request.data)
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 

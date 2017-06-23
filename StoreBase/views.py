@@ -41,7 +41,7 @@ def store_id(request, pk):
     elif request.method == 'PUT':
         serializer = StoreSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save()
+            erializer.update(part, request.data)
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 

@@ -4,11 +4,17 @@ from UserBase.models import User
 
 
 class CartItem(models.Model):
+
     Cart = models.ForeignKey('Cart', null=True, blank=True, related_name="carts")    # add on_delete cascade
     Item = models.ForeignKey(Product)
     ProId = models.IntegerField(blank=True, null=True)
+    # this might not be useful now
 
     CartPhoneNo = models.BigIntegerField(blank=True, null=True)   # phone of User
+
+    RemovedFromCart = models.BooleanField(default=False, blank=True)
+    IsOrdered = models.BooleanField(default=False, blank=True)
+    OrderId = models.IntegerField(blank=True, null=True)
 
     Quantity = models.FloatField(blank=True, default=1.0)                   # may be decimal also check
     SubTotal = models.FloatField(blank=True, null=True)

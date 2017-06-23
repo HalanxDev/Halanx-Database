@@ -45,7 +45,7 @@ def cart_id(request, no):
     elif request.method == 'PUT':
         serializer = CartSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save()
+            serializer.update(part, request.data)
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -85,7 +85,7 @@ def item_id(request, pk):
     elif request.method == 'PUT':
         serializer = CartItemSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save()
+            serializer.update(part, request.data)
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -120,7 +120,6 @@ def cart_itemlist(request, pk):
         # allitems = g.cartitem_set.all()     # error : no attribute named 'Cart'
         # filter is used in case of many possible results
 
-
     """
     if request.method == 'GET':
 
@@ -130,4 +129,22 @@ def cart_itemlist(request, pk):
         return HttpResponse(abc, content_type="application/json")
 
     """
+
+
+@api_view(['GET'])
+def cart_itemlist_active(request, pk):
+
+    try:
+        g = Cart.objects.get(UserPhone=pk)
+    except Cart.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'GET':
+        allitems = CartItem.objects.filter(CartPhoneNo=pk, RemovedFromCart=False)
+        serializer = CartItemSerializer(allitems, many=True)
+        return Response(serializer.data)
+
+
+
+
 

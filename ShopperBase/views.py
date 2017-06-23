@@ -43,7 +43,7 @@ def shopper_id(request, no):
     elif request.method == 'PUT':
         serializer = ShopperSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save()
+            serializer.update(part, request.data)
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 

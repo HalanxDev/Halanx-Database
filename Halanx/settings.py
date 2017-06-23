@@ -115,7 +115,7 @@ DATABASES = {
         'NAME': 'Halanx',
         'USER': 'Halanx',
         'PASSWORD': 'Pass-1234',
-        'HOST': ' halanx-db.c0vvfkdln5ew.us-west-2.rds.amazonaws.com',
+        'HOST': 'halanx-db.c0vvfkdln5ew.us-west-2.rds.amazonaws.com',
         'PORT': '3306',
     }
 }
