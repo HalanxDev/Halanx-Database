@@ -40,16 +40,17 @@ def order_list(request):
 
         if serializer.is_valid():
             cid = serializer.save()
+            curr = Order.objects.get(id=cid)
 
             for an_item in items_ordered:        # change order id of active items
-                an_item.OrderId = cid
+                an_item.OrderId = curr
                 an_item.save()
 
             concerned_cart = Cart.objects.get(UserPhone=data['CustomerPhoneNo'])
             concerned_cart.Total = 0.0
             concerned_cart.save()            # total of carts is 0 now
 
-            curr = Order.objects.get(id=cid)            # store total of active items in order object
+            # store total of active items in order object
             curr.Total = tot
             curr.save()
 

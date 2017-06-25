@@ -1,5 +1,4 @@
 from django.db import models
-from StoreBase.models import Store
 
 
 SHOE = 'Footwear'
@@ -20,7 +19,6 @@ ProductCategories = (            # Add categories here
 
 class Product(models.Model):
 
-    StoreId = models.ManyToManyField(Store, blank=True)
     ProductName = models.CharField(blank=True, max_length=250)
     Price = models.FloatField(blank=True, default=9.99)
 

@@ -70,7 +70,7 @@ def item_list(request):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-@api_view(['GET', 'PUT', 'DELETE'])
+@api_view(['GET', 'PATCH', 'DELETE'])
 def item_id(request, pk):
 
     try:
@@ -82,8 +82,8 @@ def item_id(request, pk):
         serializer = CartItemSerializer(part)
         return Response(serializer.data)
 
-    elif request.method == 'PUT':
-        serializer = CartItemSerializer(data=request.data)
+    elif request.method == 'PATCH':
+        serializer = CartItemSerializer(data=request.data, partial=True)
         if serializer.is_valid():
             serializer.update(part, request.data)
             return Response(serializer.data)
