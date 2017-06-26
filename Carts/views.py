@@ -6,7 +6,7 @@ from rest_framework.decorators import api_view
 from django.http import JsonResponse, HttpResponse
 from rest_framework import status
 from .serializers import CartSerializer
-from .serializers import CartItemSerializer
+from .serializers import CartItemSerializer, CartItemSerializer1
 from django.core import serializers
 from rest_framework.response import Response
 
@@ -59,7 +59,7 @@ def item_list(request):
 
     if request.method == 'GET':
         items = CartItem.objects.all()
-        serializer = CartItemSerializer(items, many=True)
+        serializer = CartItemSerializer1(items, many=True)
         return Response(serializer.data)
 
     elif request.method == 'POST':
@@ -79,11 +79,11 @@ def item_id(request, pk):
         return Response(status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'GET':
-        serializer = CartItemSerializer(part)
+        serializer = CartItemSerializer1(part)
         return Response(serializer.data)
 
     elif request.method == 'PATCH':
-        serializer = CartItemSerializer(data=request.data, partial=True)
+        serializer = CartItemSerializer1(data=request.data, partial=True)
         if serializer.is_valid():
             serializer.update(part, request.data)
             return Response(serializer.data)
@@ -106,9 +106,10 @@ def cart_itemlist(request, pk):
         return Response(status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'GET':
-        serializer = CartItemSerializer(allitems, many=True)
+        serializer = CartItemSerializer1(allitems, many=True)
         return Response(serializer.data)
 
+    # no need of POST here
     if request.method == 'POST':
         serializer = CartItemSerializer(data=request.data)
         if serializer.is_valid():
@@ -141,7 +142,7 @@ def cart_itemlist_active(request, pk):
 
     if request.method == 'GET':
         allitems = CartItem.objects.filter(CartPhoneNo=pk, RemovedFromCart=False)
-        serializer = CartItemSerializer(allitems, many=True)
+        serializer = CartItemSerializer1(allitems, many=True)
         return Response(serializer.data)
 
 

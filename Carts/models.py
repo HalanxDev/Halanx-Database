@@ -10,8 +10,6 @@ class CartItem(models.Model):
     Item = models.ForeignKey(Product, blank=True, null=True)
     OrderId = models.ForeignKey(Order, related_name='order_items', blank=True, null=True)
 
-    ProId = models.IntegerField(blank=True, null=True)
-
     # this might not be useful now
 
     CartPhoneNo = models.BigIntegerField(blank=True, null=True)   # phone of User
@@ -26,7 +24,6 @@ class CartItem(models.Model):
 
     def save(self, *args, **kwargs):
         self.SubTotal = self.Item.Price * self.Quantity
-        self.ProId = self.Item.id
         g = Cart.objects.get(UserPhone=self.CartPhoneNo)
         self.Cart = g
         self.Cart.Total = self.Cart.Total + (self.Item.Price*self.Quantity)
