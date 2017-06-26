@@ -42,6 +42,8 @@ class Shopper(models.Model):
     AvailableFrom = models.TimeField(blank=True, null=True)
     AvailableTo = models.TimeField(blank=True, null=True)
 
+    IsOnline = models.BooleanField(blank=True, default=True )
+    
     A = models.FloatField(blank=True, default=0)
     B = models.FloatField(blank=True, default=0)
     C = models.FloatField(blank=True, default=0)
