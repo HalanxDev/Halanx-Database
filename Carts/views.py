@@ -83,7 +83,7 @@ def item_id(request, pk):
         return Response(serializer.data)
 
     elif request.method == 'PATCH':
-        serializer = CartItemSerializer1(data=request.data, partial=True)
+        serializer = CartItemSerializer1(part, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.update(part, request.data)
             return Response(serializer.data)
