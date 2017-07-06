@@ -40,8 +40,8 @@ def shopper_id(request, no):
         serializer = ShopperSerializer(part)
         return Response(serializer.data)
 
-    elif request.method == 'PUT':
-        serializer = ShopperSerializer(data=request.data)
+    elif request.method == 'PATCH':
+        serializer = ShopperSerializer(part, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.update(part, request.data)
             return Response(serializer.data)

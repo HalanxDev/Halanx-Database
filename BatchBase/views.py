@@ -40,10 +40,10 @@ def batch_id(request, pk):
         serializer = BatchesSerializer(part)
         return Response(serializer.data)
 
-    elif request.method == 'PUT':
-        serializer = BatchesSerializer(data=request.data)
+    elif request.method == 'PATCH':
+        serializer = CartItemSerializer1(part, data=request.data, partial=True)
         if serializer.is_valid():
-            serializer.save()
+            serializer.update(part, request.data)
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 

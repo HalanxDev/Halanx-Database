@@ -86,8 +86,8 @@ def order_id(request, pk):
         serializer = OrderSerializer(part)
         return Response(serializer.data)
 
-    elif request.method == 'PUT':
-        serializer = OrderSerializer(data=request.data)
+    elif request.method == 'PATCH':
+        serializer = OrderSerializer(part, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.update(part, request.data)
             return Response(serializer.data)

@@ -38,10 +38,10 @@ def store_id(request, pk):
         serializer = StoreSerializer(part)
         return Response(serializer.data)
 
-    elif request.method == 'PUT':
-        serializer = StoreSerializer(data=request.data)
+    elif request.method == 'PATCH':
+        serializer = CartItemSerializer1(part, data=request.data, partial=True)
         if serializer.is_valid():
-            erializer.update(part, request.data)
+            serializer.update(part, request.data)
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -50,6 +50,7 @@ def store_id(request, pk):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
+"""
 # to get products in a particular store
 # this is wrong, lol
 @api_view(['GET', 'PUT', 'DELETE'])     # localhost:8000/stores/pk/products
@@ -82,7 +83,7 @@ def store_products(request, pk):
 
 
 
-
+"""
 
 
 

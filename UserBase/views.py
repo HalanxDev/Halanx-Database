@@ -39,8 +39,8 @@ def user_id(request, no):
         serializer = UserSerializer(part)
         return Response(serializer.data)
 
-    elif request.method == 'PUT':
-        serializer = UserSerializer(data=request.data)
+    elif request.method == 'PATCH':
+        serializer = UserSerializer(part, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.update(part, request.data)
             return Response(serializer.data)

@@ -37,9 +37,8 @@ def product_id(request, pk):
         serializer = ProductSerializer(part)
         return Response(serializer.data)
 
-    elif request.method == 'PUT':
-
-        serializer = ProductSerializer(data=request.data)
+    elif request.method == 'PATCH':
+        serializer = Producterializer(part, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.update(part, request.data)
             return Response(serializer.data)
