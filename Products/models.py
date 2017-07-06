@@ -29,6 +29,8 @@ class Product(models.Model):
 
     ProductImage = models.CharField(max_length=400, null=True, blank=True)
     Features = models.TextField(blank=True, null=True)
+    ProductSize = models.IntegerField(blank=True, null=True, default=3)
+
     Active = models.BooleanField(blank=True, default=True)    # no need of this as only active products will be stred in DB
 
     def __str__(self):

@@ -31,25 +31,34 @@ class Order (models.Model):
 
     # these three fields are giving error 'long' object has no field 'customer'
 
+    # SPECIFICS
     CustomerPhoneNo = models.BigIntegerField(null=True)
     ShopperPhoneNo = models.BigIntegerField(null=True, blank=True)
+    PlacingTime = models.DateTimeField(auto_now_add=True)
 
+    # MONEY INVOLVED
     Total = models.FloatField(blank=True, null=True)
     DeliveryCharges = models.FloatField(null=True, blank=True, default=0.0)
-
-    PlacingTime = models.DateTimeField(auto_now_add=True)
-    DeliveryAddress = models.CharField(max_length=300, null=True, blank=True)
     Earnings = models.FloatField(null=True, blank=True, default=0.0)
 
+    # WHERE TO DELIVER
+    DeliveryAddress = models.CharField(max_length=300, null=True, blank=True)
+    Latitude = models.FloatField(blank=True, null=True)
+    Longitude = models.FloatField(blank=True, null=True)
+
+    # RATINGS EARNED
     UserRating = models.FloatField(choices=RatingChoice, default=3.0)
     ShopperRating = models.FloatField(choices=RatingChoice, default=3.0)
 
+    # DELIVERY STATUS
     IsDelivered = models.BooleanField(default=False, blank=True)
 
-    DeliveryDate = models.DateField(null=True, blank=True)
+    # DELIVERY TIME
+    DeliveryDate = models.CharField(max_length=20, null=True, blank=True)
     StartTime = models.TimeField(null=True, blank=True)
     EndTime = models.TimeField(null=True, blank=True)
 
+    # EXTRAS
     Notes = models.TextField(null=True, blank=True)
     PriorityScore = models.IntegerField(blank=True, null=True, default=1)
 
