@@ -26,7 +26,7 @@ def store_list(request):
 
 
 # To get product according to its pk
-@api_view(['GET', 'PUT', 'DELETE'])    # localhost:8000/stores/pk
+@api_view(['GET', 'PATCH', 'DELETE'])    # localhost:8000/stores/pk
 def store_id(request, pk):
 
     try:

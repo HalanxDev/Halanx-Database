@@ -28,7 +28,7 @@ def shopper_list(request):
 
 
 # To get product according to its pk
-@api_view(['GET', 'PUT', 'DELETE'])
+@api_view(['GET', 'PATCH', 'DELETE'])
 def shopper_id(request, no):
 
     try:

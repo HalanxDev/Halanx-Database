@@ -74,7 +74,7 @@ def order_items(request, pk):
 
 
 # To get product according to its pk
-@api_view(['GET', 'PUT', 'DELETE'])
+@api_view(['GET', 'PATCH', 'DELETE'])
 def order_id(request, pk):
 
     try:

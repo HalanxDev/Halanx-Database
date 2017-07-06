@@ -25,7 +25,7 @@ def product_list(request):
 
 
 # To get product according to its pk
-@api_view(['GET', 'PUT', 'DELETE'])
+@api_view(['GET', 'PATCH', 'DELETE'])
 def product_id(request, pk):
 
     try:
