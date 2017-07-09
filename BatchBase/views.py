@@ -28,7 +28,7 @@ def batch_list(request):
 
 
 # To get product according to its pk
-@api_view(['GET', 'PUT', 'DELETE'])
+@api_view(['GET', 'PATCH', 'DELETE'])
 def batch_id(request, pk):
 
     try:
@@ -41,7 +41,7 @@ def batch_id(request, pk):
         return Response(serializer.data)
 
     elif request.method == 'PATCH':
-        serializer = CartItemSerializer1(part, data=request.data, partial=True)
+        serializer = BatchesSerializer(part, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.update(part, request.data)
             return Response(serializer.data)

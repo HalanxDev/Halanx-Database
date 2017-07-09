@@ -1,12 +1,12 @@
 
 from rest_framework import serializers
 from .models import Order
-from Carts.serializers import CartItemSerializer
+from Carts.serializers import CartItemSerializer1
 
 
 class OrderSerializer(serializers.ModelSerializer):
 
-    order_items = CartItemSerializer(many=True, read_only=True)
+    order_items = CartItemSerializer1(many=True, read_only=True)
 
     class Meta:
         model = Order

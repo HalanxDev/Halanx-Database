@@ -2,11 +2,13 @@
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.decorators import api_view
-from .serializers import StoreSerializer
-from .models import Store
+from .serializers import StoreSerializer, LogoSerializer
+from .models import Store, Logo
 from Products.models import Product
 from Products.serializers import ProductSerializer
 
+import boto3
+import base64
 
 # list of all stores
 @api_view(['GET', 'POST'])
@@ -26,7 +28,7 @@ def store_list(request):
 
 
 # To get product according to its pk
-@api_view(['GET', 'PUT', 'DELETE'])    # localhost:8000/stores/pk
+@api_view(['GET', 'PATCH', 'DELETE'])    # localhost:8000/stores/pk
 def store_id(request, pk):
 
     try:
@@ -39,7 +41,7 @@ def store_id(request, pk):
         return Response(serializer.data)
 
     elif request.method == 'PATCH':
-        serializer = CartItemSerializer1(part, data=request.data, partial=True)
+        serializer = StoreSerializer(part, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.update(part, request.data)
             return Response(serializer.data)
@@ -48,6 +50,43 @@ def store_id(request, pk):
     elif request.method == 'DELETE':
         part.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+@api_view(['POST'])
+def upload_logo(request, pk):
+    part = Store.objects.get(id=pk)
+
+    if request.method == 'POST':
+
+        data = request.data
+
+        if data['StoreLogoImage'] is not None:
+            filename = '%s.jpeg' % data['StoreId']
+            client = boto3.client('s3')
+            img1 = base64.b64decode(data['StoreLogoImage'])
+            client.put_object(Bucket='halanx-stores-logo',
+                              ACL='public-read',
+                              Key=filename, ContentType='jpeg',
+                              Body=img1)
+
+            part.StoreLogo = 'https://s3-us-west-2.amazonaws.com/halanx-stores-logo/' + filename
+            part.save()
+
+        serializer = LogoSerializer(data=request.data)
+        if serializer.is_valid():
+
+            serializer.save()
+
+            g = Logo.objects.get(StoreId=data['StoreId'])
+            print g.StoreId
+
+            if g.StoreLogoImage is not None:
+                g.StoreLogoImage = None
+                g.save()
+            print "abc"
+
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 """

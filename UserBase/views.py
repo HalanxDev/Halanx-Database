@@ -27,7 +27,7 @@ def user_list(request):
 
 
 # To get product according to its pk
-@api_view(['GET', 'PUT', 'DELETE'])
+@api_view(['GET', 'PATCH', 'DELETE'])
 def user_id(request, no):
 
     try:
@@ -49,8 +49,6 @@ def user_id(request, no):
     elif request.method == 'DELETE':
         part.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
-
-
 
 
 

@@ -1,4 +1,5 @@
 from django.db import models
+from StoreBase.models import Store
 
 
 SHOE = 'Footwear'
@@ -21,9 +22,10 @@ class Product(models.Model):
 
     ProductName = models.CharField(blank=True, max_length=250)
     Price = models.FloatField(blank=True, default=9.99)
+    StoreId = models.ForeignKey(Store, blank=True, null=True)
 
+    # choices = ProductCategories
     Category = models.CharField(max_length=200,
-                                choices=ProductCategories,
                                 blank=True, null=True,
                                 default='No Specific Category')
 
@@ -42,6 +44,34 @@ class Product(models.Model):
 
         #attach algo for delivery charges
      #   super(CartItem, self).save(*args, **kwargs)
+
+
+class ProductPhoto(models.Model):
+
+    ProductId = models.IntegerField(unique=True, blank=True, null=True)
+
+    ProductString = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+
+        return str(self.ProductId)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

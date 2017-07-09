@@ -29,7 +29,7 @@ def cart_list(request):
 
 
 # To get product according to its pk
-@api_view(['GET', 'PUT', 'DELETE'])
+@api_view(['GET', 'PATCH', 'DELETE'])
 def cart_id(request, no):
 
     try:
@@ -42,8 +42,8 @@ def cart_id(request, no):
         serializer = CartSerializer(part)
         return Response(serializer.data)
 
-    elif request.method == 'PUT':
-        serializer = CartSerializer(data=request.data)
+    elif request.method == 'PATCH':
+        serializer = BatchesSerializer(part, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.update(part, request.data)
             return Response(serializer.data)

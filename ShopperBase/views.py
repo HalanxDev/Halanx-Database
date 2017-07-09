@@ -1,9 +1,9 @@
 
 
-from .models import Shopper, Documents
+from .models import Shopper, Documents, ShopperImage
 from rest_framework.decorators import api_view
 from rest_framework import status
-from .serializers import ShopperSerializer, DocumentSerializer
+from .serializers import ShopperSerializer, DocumentSerializer, ShopperImageSerializer
 from rest_framework.response import Response
 
 import boto3
@@ -28,7 +28,7 @@ def shopper_list(request):
 
 
 # To get product according to its pk
-@api_view(['GET', 'PUT', 'DELETE'])
+@api_view(['GET', 'PATCH', 'DELETE'])
 def shopper_id(request, no):
 
     try:
@@ -139,6 +139,40 @@ def post_documents(request):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
+@api_view(['POST'])
+def upload_image(request, pk):
+
+    part = Shopper.objects.get(PhoneNo=pk)
+
+    if request.method == 'POST':
+
+        data = request.data
+
+        if data['DisplayPicture'] is not None:
+            filename = '%s/DisplayPicture.jpeg' % data['ShopperPhoneNo']
+            client = boto3.client('s3')
+            img1 = base64.b64decode(data['DisplayPicture'])
+            client.put_object(Bucket='halanx-shopper-documents',
+                              ACL='public-read',
+                              Key=filename, ContentType='jpeg',
+                              Body=img1)
+
+            part.DisplayPictureURL = 'https://s3-us-west-2.amazonaws.com/halanx-shopper-documents/' + filename
+            part.save()
+
+        serializer = ShopperImageSerializer(data=request.data)
+        if serializer.is_valid():
+
+            serializer.save()
+
+            g = ShopperImage.objects.get(ShopperPhoneNo=data['ShopperPhoneNo'])
+
+            if g.DisplayPicture is not None:
+                g.DisplayPicture = None
+                g.save()
+
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 

@@ -25,15 +25,15 @@ class Shopper(models.Model):
     password = models.CharField(max_length=1000, blank=True, null=True)
     EmailId = models.EmailField(blank=True)
     City = models.CharField(max_length=200, null=True, blank=True, default='Delhi')
+    DisplayPictureURL = models.CharField(max_length=300, blank=True, null=True)
     AccessToken = models.CharField(max_length=300, blank=True, null=True)
 
     # ID DETAILS
     IdNumber = models.CharField(max_length=50, blank=True)                             # number of id
-    IdType = models.CharField(max_length=100, blank=True,
-                              choices=IdentityProofs,  default='Aadhar Card')
+    IdType = models.CharField(max_length=100, blank=True, default='Aadhar Card')
 
     # VEHICLE DETAILS
-    Vehicle = models.CharField(max_length=50, choices=Vehicles, blank=True, default='Car')
+    Vehicle = models.CharField(max_length=50, blank=True, default='Car')
     VehicleSpaceAvailable = models.IntegerField(default=3, blank=True, null=True)
 
     # AVAILABILITY DETAILS
@@ -63,7 +63,6 @@ class Shopper(models.Model):
 
     Verified = models.BooleanField(blank=True, default=False)
 
-
     def __str__(self):
         return str(self.PhoneNo)
 
@@ -82,6 +81,31 @@ class Documents(models.Model):
 
     def __str__(self):
         return str(self.ShopperPhoneNo)
+
+
+class ShopperImage(models.Model):
+
+    ShopperPhoneNo = models.BigIntegerField(unique=True)
+
+    DisplayPicture = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return str(self.ShopperPhoneNo)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
