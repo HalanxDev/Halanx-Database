@@ -10,6 +10,7 @@ from Products.serializers import ProductSerializer
 import boto3
 import base64
 
+
 # list of all stores
 @api_view(['GET', 'POST'])
 def store_list(request):
@@ -78,15 +79,26 @@ def upload_logo(request, pk):
             serializer.save()
 
             g = Logo.objects.get(StoreId=data['StoreId'])
-            print g.StoreId
 
             if g.StoreLogoImage is not None:
                 g.StoreLogoImage = None
                 g.save()
-            print "abc"
 
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['GET'])
+def store_products(request, store):
+
+    try:
+        part = Product.objects.filter(StoreId=store)
+    except Product.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'GET':
+        serializer = ProductSerializer(part, many=True)
+        return Response(serializer.data)
 
 
 """

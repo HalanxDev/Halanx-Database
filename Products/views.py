@@ -15,7 +15,7 @@ import boto3
 def product_list(request):
 
     if request.method == 'GET':
-        # print "abc"
+
         products = Product.objects.all()
         serializer = ProductSerializer(products, many=True)
         return Response(serializer.data)

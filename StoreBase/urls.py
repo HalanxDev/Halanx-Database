@@ -7,7 +7,7 @@ urlpatterns = [
     url(r'^$', views.store_list),
     url(r'^(?P<pk>[0-9]+)/upload-logo', views.upload_logo),
     url(r'^(?P<pk>[0-9]+)$', views.store_id),
-    # url(r'^(?P<pk>[0-9]+)/products$', views.store_products),
+    url(r'^(?P<store>[0-9]+)/products$', views.store_products),
 ]
 
 
